@@ -12,9 +12,9 @@ public class Triangle {
             for (int j = 0; j < mmas1[i].length; j++) {
                 System.out.println("Введите сторону " + (char) (65 + a) + " по оси  " + (char) (120 + b));
                 mmas1[i][j] = in.nextInt();
-                b++;
+                if (b > 0) b = 0;
+                else b++;
             }
-            if (b > 0) b = 0;
             a++;
             System.out.println();
         }
@@ -25,7 +25,6 @@ public class Triangle {
         double y23 = (mmas1[1][1] - mmas1[2][1]);
 
         double semiPer = 0.5 * ((x13 * y23) - (x23 * y13));
-
 
         for (int i = 0; i < mmas1.length; i++) {
             for (int j = 0; j < mmas1[i].length; j++) {
