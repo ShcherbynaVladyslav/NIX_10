@@ -9,20 +9,20 @@ public class Main {
         int ss = in.nextInt();
         String s = "---------------------------------------------------------------------------------";
 
-        Triangle task1 = new Triangle();
-        ArrayOfNumbers task2 = new ArrayOfNumbers();
-//        Task3 task3 = new Task3();
+        Triangle triangle = new Triangle();
+        ArrayOfNumbers arrayOfNumbers = new ArrayOfNumbers();
+
 
         if (ss == 1) {
             System.out.println("Вы выбрали 1");
             System.out.println(s);
-            Triangle.run();
+            triangle.run();
 
 
         } else if (ss == 2) {
             System.out.println("Вы выбрали 2");
             System.out.println(s);
-            ArrayOfNumbers.run();
+            arrayOfNumbers.run(args);
 
 
 //        } else if (ss == 3) {

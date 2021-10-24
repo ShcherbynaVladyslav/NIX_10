@@ -3,8 +3,8 @@ package ua.com.alevel;
 import java.util.Scanner;
 
 public class Triangle {
+    public  void run() {
 
-    public static void run() {
         int a = 0, b = 0;
         Scanner in = new Scanner(System.in);
         double[][] mmas1 = new double[3][2];

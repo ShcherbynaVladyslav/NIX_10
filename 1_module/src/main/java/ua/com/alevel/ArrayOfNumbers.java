@@ -3,7 +3,8 @@ package ua.com.alevel;
 import java.util.Scanner;
 
 public class ArrayOfNumbers {
-    public static void run() {
+    public void run(String[] args) {
+
         int count = 0;
         int superCount = 1;
 
@@ -27,7 +28,7 @@ public class ArrayOfNumbers {
         }
 
         for (int i = 0; i < arr1.length; i++) {
-            for (int j = 0; j == // args.length // ; j++) {
+            for (int j = 0; j == args.length  ; j++) {
                 if (arr2[i] != arr2[j]) superCount++;
             }
         }
