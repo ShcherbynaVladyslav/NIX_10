@@ -9,6 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>hw_1_base_operation</module>
+        <module>hw_2_strings</module>
         <module>1_module</module>
     </modules>
     <packaging>pom</packaging>
