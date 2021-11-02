@@ -3,6 +3,7 @@ package ua.com.alevel.one;
 import java.util.Scanner;
 
 public class Chess {
+
     public void run() {
         char lit, needLit;
         int num, needNum;

@@ -3,8 +3,8 @@ package ua.com.alevel.one;
 import java.util.Scanner;
 
 public class Triangle {
-    public void run() {
 
+    public void run() {
         int z = 1;
         while (z != 0) {
 
@@ -29,9 +29,7 @@ public class Triangle {
 
             double semiPer = 0.5 * ((x13 * y23) - (x23 * y13));
 
-
             System.out.println("Периметр =  " + Math.abs(semiPer));
-
 
             System.out.println("Повторить задание? 1 - да, 2 - нет");
             int q = in.nextInt();
