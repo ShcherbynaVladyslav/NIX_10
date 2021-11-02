@@ -3,6 +3,7 @@ package ua.com.alevel;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         System.out.println("Выберете номер задачи (1, 2, 3) ");
         Scanner in = new Scanner(System.in);
@@ -18,7 +19,6 @@ public class Main {
             System.out.println(s);
             task1.run();
 
-
         } else if (ss == 2) {
             System.out.println("Вы выбрали 2");
             System.out.println(s);
@@ -29,9 +29,6 @@ public class Main {
             System.out.println("Вы выбрали 3");
             System.out.println(s);
             task3.run();
-
-
         } else System.out.println("error");
-
     }
 }

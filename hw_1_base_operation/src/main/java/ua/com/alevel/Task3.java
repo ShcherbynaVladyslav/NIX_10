@@ -18,6 +18,5 @@ public class Task3 {
 
         res = sPl + ((needKnow - 1) / 2) * twoPause + (needKnow / 2) * firstPause;
         System.out.println(res / 60 + ":" + res % 60);
-
     }
 }

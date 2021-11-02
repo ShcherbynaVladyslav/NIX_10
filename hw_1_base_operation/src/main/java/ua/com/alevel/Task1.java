@@ -11,15 +11,11 @@ public class Task1 {
         char[] crr = arr.toCharArray();
         int res = 0;
 
-
         for (int i = 0; i < crr.length; i++) {
             if ((byte)crr[i]>=48 && (byte)crr[i]<=57) res += (byte) crr[i] - 48;
         }
 
         for (int i = 0; i < crr.length; i++) System.out.println(crr[i]);
         System.out.println(res);
-
-
-
     }
 }

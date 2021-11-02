@@ -3,8 +3,8 @@ package ua.com.alevel.one;
 import java.util.Scanner;
 
 public class ArrayOfNumbers {
-    public void run(String[] args) {
 
+    public void run(String[] args) {
         int count = 0;
         int superCount = 1;
         int z = 1;
@@ -47,5 +47,4 @@ public class ArrayOfNumbers {
             }
         }
     }
-
 }

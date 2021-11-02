@@ -5,7 +5,6 @@ import java.util.Stack;
 public class Bracket {
 
     public boolean isValid(String s) {
-
         Stack<Character> c = new Stack<>();
         int n = s.length();
 
