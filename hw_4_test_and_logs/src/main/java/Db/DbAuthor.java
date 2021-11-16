@@ -1,6 +1,5 @@
 package Db;
 
-import Db.DbBook;
 import Entity.Author;
 import Entity.Book;
 
@@ -41,13 +40,13 @@ public class DbAuthor {
             System.out.println("Автор не найден");
             return;
         }
-         DbBook dbBook = new DbBook();
-
-        Book currentB = bookFindById(book.getId());
+        Book currentB = DbBook.getInstance().booksFindById(book.getId());
         if (currentB == null) {
             System.out.println("Книга не найдена");
             return;
         }
+        author.setMyBooks(book.getName());
+
     }
 
     public Author authorFindById(String id) {

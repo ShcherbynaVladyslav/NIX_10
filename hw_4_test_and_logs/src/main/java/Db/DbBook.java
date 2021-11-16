@@ -11,7 +11,7 @@ public class DbBook {
     private static DbBook instance;
     private static int booksCount;
 
-    private DbBook() {
+    public DbBook() {
         books = new Book[0];
         booksCount = 0;
     }
