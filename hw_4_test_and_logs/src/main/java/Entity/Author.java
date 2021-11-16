@@ -4,7 +4,7 @@ package Entity;
 public class Author {
     private String id;
     private String name;
-    private int idn;
+    private String idn;
     private String myBooks;
 
     public String getName() {
@@ -15,11 +15,11 @@ public class Author {
         this.name = name;
     }
 
-    public int getIdn() {
+    public String getIdn() {
         return idn;
     }
 
-    public void setIdn(int idn) {
+    public void setIdn(String idn) {
         this.idn = idn;
     }
 

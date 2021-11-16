@@ -59,8 +59,6 @@ public class UserController {
 
             Author author = new Author();
             author.setName(fullName);
-            author.setIdn(authorIDN);
-            authorIDN++;
             authorService.create(author);
             System.out.println("Автор создан.");
         } catch (IOException e) {
@@ -74,12 +72,15 @@ public class UserController {
             System.out.println("Выберите автора которому хотите добавить книгу");
             findAllAuthor();
             Author author = new Author();
+            Book book = new Book();
             System.out.println("Введите id автора");
             String id = reader.readLine();
             author.setId(id);
             findAllBooks();
             System.out.println("Выберете id книги");
-            authorService.addBooks(author, findBooksById(reader));
+            String idBook = reader.readLine();
+            author.setIdn(idBook);
+            authorService.addBooks(author, book);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,6 +1,7 @@
 package Db;
 
 import Entity.Author;
+import Entity.Book;
 
 import java.util.Arrays;
 import java.util.UUID;
@@ -34,10 +35,10 @@ public class DbAuthor {
         return authors;
     }
 
-    public void addBookAuthor(Author author) {
+    public void addBookAuthor(Author author, Book book) {
         Author current = findById(author.getId());
         if (current == null) return;
-        current.setMyBooks(author.setMyBooks(findById(create(bookAuthor))));
+        current.setMyBooks(book.getId());
 
     }
 

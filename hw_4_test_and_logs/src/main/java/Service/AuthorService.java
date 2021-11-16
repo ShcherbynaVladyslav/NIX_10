@@ -14,7 +14,7 @@ public class AuthorService {
     }
 
     public void addBooks(Author author, Book book) {
-        authorDao.addBooks(author,);
+        authorDao.addBooks(author, book);
     }
 
     public Author[] findAll() {
