@@ -2,6 +2,7 @@ package Controller;
 
 import Entity.Author;
 import Entity.Book;
+
 import Service.AuthorService;
 import Service.BooksService;
 
@@ -13,10 +14,7 @@ public class UserController {
 
     private final AuthorService authorService = new AuthorService();
     private final BooksService booksService = new BooksService();
-    //private final Book book = f();
 
-    int authorIDN = 1;
-    int bookIDN = 1;
 
     public void run() {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
@@ -39,6 +37,7 @@ public class UserController {
     private void crud(String position, BufferedReader reader) {
         switch (position) {
             case "1" -> createAuthor(reader);
+            case "4" -> findAuthorById(reader);
             case "5" -> addBookAuthor(reader);
             case "6" -> findAllAuthor();
             case "7" -> createBook(reader);
@@ -65,22 +64,33 @@ public class UserController {
             System.out.println("exception: = " + e.getMessage());
         }
     }
+    public void findAuthorById(BufferedReader reader) {
+        try {
+            System.out.println("Найти автора.\n");
+            System.out.print("Введите id: ");
+            String idAuthor = reader.readLine();
+            Author author = authorService.authorFindById(idAuthor);
+            System.out.println(author);
+        } catch (IOException e) {
+            System.out.println("exception: = " + e.getMessage());
+        }
+    }
 
 
     public void addBookAuthor(BufferedReader reader) {
         try {
-            System.out.println("Выберите автора которому хотите добавить книгу");
-            findAllAuthor();
+            System.out.println("Выберите id автора котому хотите добавить книгу");
             Author author = new Author();
-            Book book = new Book();
-            System.out.println("Введите id автора");
-            String id = reader.readLine();
-            author.setId(id);
+            findAllAuthor();
+            String idAuth = reader.readLine();
+            author.setId(idAuth);
+            System.out.println("Выберите id книги");
             findAllBooks();
-            System.out.println("Выберете id книги");
+            Book book = new Book();
             String idBook = reader.readLine();
-            author.setIdn(idBook);
+            book.setId(idBook);
             authorService.addBooks(author, book);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -97,8 +107,6 @@ public class UserController {
 
             Book book = new Book();
             book.setName(bookName);
-            book.setIdn(bookIDN);
-            bookIDN++;
             booksService.create(book);
             System.out.println("Книга создана.");
         } catch (IOException e) {
@@ -106,17 +114,16 @@ public class UserController {
         }
     }
 
-    public Book findBooksById(BufferedReader reader) {
+    public void findBooksById(BufferedReader reader) {
         try {
             System.out.println("Найти книгу.\n");
             System.out.print("Введите id: ");
-            String id = reader.readLine();
-            Book book = booksService.findById(id);
+            String idBook = reader.readLine();
+            Book book = booksService.booksFindById(idBook);
             System.out.println(book);
         } catch (IOException e) {
             System.out.println("exception: = " + e.getMessage());
         }
-        return null;
     }
 
     public void findAllAuthor() {
@@ -148,7 +155,7 @@ public class UserController {
         System.out.println("1. Добавить автора");
 //        System.out.println("2. Изменить автора");
 //        System.out.println("3. Удалить автора");
-//        System.out.println("4. Найти автора по id");
+        System.out.println("4. Найти автора по id");
         System.out.println("5. Добавить книгу автору");
         System.out.println("6. Показать всех Авторов");
         System.out.println();

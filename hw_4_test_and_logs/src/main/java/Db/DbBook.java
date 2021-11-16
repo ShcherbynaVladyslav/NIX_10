@@ -29,7 +29,7 @@ public class DbBook {
         books[booksCount++] = book;
     }
 
-    public Book findBookById(String id) {
+    public Book booksFindById(String id) {
         for (Book book : books) {
             if (book.getId().equals(id)) {
                 return book;

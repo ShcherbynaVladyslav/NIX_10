@@ -1,5 +1,6 @@
 package Db;
 
+import Db.DbBook;
 import Entity.Author;
 import Entity.Book;
 
@@ -9,7 +10,6 @@ import java.util.UUID;
 public class DbAuthor {
 
     private Author[] authors;
-    private Author[] bookAuthor;
     private static DbAuthor instance;
     private static int authorCount;
 
@@ -36,13 +36,21 @@ public class DbAuthor {
     }
 
     public void addBookAuthor(Author author, Book book) {
-        Author current = findById(author.getId());
-        if (current == null) return;
-        current.setMyBooks(book.getId());
+        Author currentA = authorFindById(author.getId());
+        if (currentA == null) {
+            System.out.println("Автор не найден");
+            return;
+        }
+         DbBook dbBook = new DbBook();
 
+        Book currentB = bookFindById(book.getId());
+        if (currentB == null) {
+            System.out.println("Книга не найдена");
+            return;
+        }
     }
 
-    public Author findById(String id) {
+    public Author authorFindById(String id) {
         for (Author author : authors) {
             if (author.getId().equals(id)) {
                 return author;
