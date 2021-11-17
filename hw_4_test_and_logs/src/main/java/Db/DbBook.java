@@ -1,6 +1,7 @@
 package Db;
 
 import Entity.Book;
+import Entity.Author;
 
 import java.util.Arrays;
 import java.util.UUID;
@@ -41,6 +42,28 @@ public class DbBook {
 
     public Book[] findAll() {
         return books;
+    }
+
+    public void addAuthorToBook(Book book, Author author) {
+        Book currentB = booksFindById(book.getId());
+        if (currentB == null) {
+            System.out.println("Автор не найден");
+            return;
+        }
+        Author currentA = DbAuthor.getInstance().authorFindById(author.getId());
+        if (currentA == null) {
+            System.out.println("Автор не найдена");
+            return;
+        }
+        book.setAuthorBook(book.getName());
+        System.out.println("Автор успешно добавлен.");
+    }
+
+    public boolean existByNameBook(String name){
+        for (Book book: books) {
+            if (book.getName().equals(name)) return true;
+        }
+        return false;
     }
 
     private String generateId() {

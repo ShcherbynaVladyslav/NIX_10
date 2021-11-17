@@ -5,6 +5,7 @@ import Entity.Author;
 import Entity.Book;
 
 public class AuthorService {
+
     private final AuthorDao authorDao = new AuthorDao();
 
     public void create(Author author) {
@@ -15,12 +16,11 @@ public class AuthorService {
        return authorDao.authorFindById(id);
     }
 
-    public void addBooks(Author author, Book book) {
-        authorDao.addBooks(author, book);
+    public void addBookToAuthor(Author author, Book book) {
+        authorDao.addBookToAuthor(author, book);
     }
 
     public Author[] findAll() {
         return authorDao.findAll();
     }
-
 }

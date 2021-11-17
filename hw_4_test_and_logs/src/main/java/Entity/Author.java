@@ -1,11 +1,18 @@
 package Entity;
 
 
+import java.util.Arrays;
+
 public class Author {
     private String id;
     private String name;
-    private String idn;
-    private String myBooks;
+    private String [] myBooks;
+    private int booksCount;
+
+    public Author() {
+        myBooks = new String[1];
+        booksCount = 0;
+    }
 
     public String getName() {
         return name;
@@ -15,37 +22,30 @@ public class Author {
         this.name = name;
     }
 
-    public String getIdn() {
-        return idn;
-    }
-
-    public void setIdn(String idn) {
-        this.idn = idn;
-    }
 
     public String getId() {
         return id;
-    }
-
-    public String getMyBooks() {
-        return myBooks;
-    }
-
-    public void setMyBooks(String myBooks) {
-        this.myBooks = myBooks;
     }
 
     public void setId(String id) {
         this.id = id;
     }
 
+    public String[] getBookAuthor() {
+        return myBooks;
+    }
+
+    public void setBookAuthor(String books) {
+        if (myBooks.length == booksCount)
+            myBooks = Arrays.copyOf(myBooks, booksCount + 1);
+        myBooks[booksCount++] = books;
+    }
+
+
     @Override
     public String toString() {
-        return "Author " +
-                "IND "+ idn +'\''+
-                "myBooks "+ myBooks +'\''+
-                " name='" + name + '\'' +
-                ", id='" + id + '\'' +
-                '}';
+        return "Имя автора = " + name + "." +
+                " Книги автора = " + Arrays.toString(myBooks)+"." +
+                " id Автора=/ " + id + " /.";
     }
 }

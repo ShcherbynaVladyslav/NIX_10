@@ -34,7 +34,7 @@ public class DbAuthor {
         return authors;
     }
 
-    public void addBookAuthor(Author author, Book book) {
+    public void addBookToAuthor(Author author, Book book) {
         Author currentA = authorFindById(author.getId());
         if (currentA == null) {
             System.out.println("Автор не найден");
@@ -45,8 +45,8 @@ public class DbAuthor {
             System.out.println("Книга не найдена");
             return;
         }
-        author.setMyBooks(book.getName());
-
+        author.setBookAuthor(book.getName());
+        System.out.println("Книга успешно добавленна.");
     }
 
     public Author authorFindById(String id) {
@@ -57,6 +57,13 @@ public class DbAuthor {
         }
         System.out.println("автор не найден");
         return null;
+    }
+
+    public boolean existByNameAuthor(String name){
+        for (Author author: authors) {
+            if (author.getName().equals(name)) return true;
+        }
+        return false;
     }
 
     private String generateId() {

@@ -1,11 +1,11 @@
 package Dao;
 
 import Db.DbAuthor;
-import Db.DbBook;
 import Entity.Author;
 import Entity.Book;
 
 public class AuthorDao {
+
     public void create(Author author) {
         DbAuthor.getInstance().create(author);
     }
@@ -13,8 +13,8 @@ public class AuthorDao {
         return DbAuthor.getInstance().authorFindById(id);
     }
 
-    public void addBooks(Author author, Book book) {
-        DbAuthor.getInstance().addBookAuthor(author, book);
+    public void addBookToAuthor(Author author, Book book) {
+        DbAuthor.getInstance().addBookToAuthor(author, book);
     }
 
     public Author[] findAll() {

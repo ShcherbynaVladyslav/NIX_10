@@ -1,9 +1,17 @@
 package Entity;
 
+import java.util.Arrays;
+
 public class Book {
     private String id;
     private String name;
-    private int idn;
+    private String[] myAuthor;
+    private int authorCount;
+
+    public Book() {
+        myAuthor = new String[1];
+        authorCount = 0;
+    }
 
     public String getName() {
         return name;
@@ -13,13 +21,6 @@ public class Book {
         this.name = name;
     }
 
-    public int getIdn() {
-        return idn;
-    }
-
-    public void setIdn(int idn) {
-        this.idn = idn;
-    }
 
     public String getId() {
         return id;
@@ -29,12 +30,20 @@ public class Book {
         this.id = id;
     }
 
+    public String[] getAuthorBook() {
+        return myAuthor;
+    }
+
+    public void setAuthorBook(String author) {
+        if (myAuthor.length == authorCount)
+            myAuthor = Arrays.copyOf(myAuthor, authorCount + 1);
+        myAuthor[authorCount++] = author;
+    }
+
     @Override
     public String toString() {
-        return "Books " +
-                "IND "+ idn +'\''+
-                " name='" + name + '\'' +
-                ", id='" + id + '\'' +
-                '}';
+        return "Название книги = " + name + "." +
+                " Авторство у = " + Arrays.toString(myAuthor)+"." +
+                " id Книги= / " + id + " /.";
     }
 }
