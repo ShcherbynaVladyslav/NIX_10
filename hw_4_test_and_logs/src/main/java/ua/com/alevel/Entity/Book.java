@@ -1,12 +1,12 @@
-package Entity;
+package ua.com.alevel.Entity;
 
 import java.util.Arrays;
 
 public class Book {
     private String id;
     private String name;
-    private String[] myAuthor;
-    private int authorCount;
+    public String[] myAuthor;
+    public int authorCount;
 
     public Book() {
         myAuthor = new String[1];

@@ -1,5 +1,4 @@
-package Entity;
-
+package ua.com.alevel.Entity;
 
 import java.util.Arrays;
 
