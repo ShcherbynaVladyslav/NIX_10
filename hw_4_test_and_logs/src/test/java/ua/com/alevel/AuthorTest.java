@@ -4,7 +4,6 @@ import org.junit.jupiter.api.*;
 import ua.com.alevel.Entity.Author;
 import ua.com.alevel.Service.AuthorService;
 
-
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class AuthorTest {
 

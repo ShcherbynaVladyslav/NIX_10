@@ -10,6 +10,8 @@
     <modules>
         <module>hw_1_base_operation</module>
         <module>hw_2_strings</module>
+        <module>hw_3_start_oop</module>
+        <module>hw_4_test_and_logs</module>
         <module>1_module</module>
     </modules>
     <packaging>pom</packaging>
