@@ -4,13 +4,10 @@ import org.junit.jupiter.api.*;
 import ua.com.alevel.Entity.Book;
 import ua.com.alevel.Service.BooksService;
 
-
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class BookTest {
 
-
     private static final BooksService booksService = new BooksService();
-
 
     public static final String NAME_OF_BOOK = "newNameBook";
     private static final String NAME_OF_BOOK_UPDATE = "newTestNameOfBook_update";
