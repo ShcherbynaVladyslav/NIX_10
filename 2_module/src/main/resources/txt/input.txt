@@ -1,0 +1,28 @@
+5
+Lugansk
+2
+2 1
+3 2
+Kharkov
+4
+1 4
+3 3
+4 6
+5 1
+Kiev
+3
+1 2
+2 1
+4 3
+Lvov
+3
+2 4
+3 5
+5 2
+Moscow
+2
+2 2
+4 2
+1
+Kharkov Kiev
+Moscow Lvov

@@ -2,6 +2,7 @@ package ua.com.alevel;
 
 import ua.com.alevel.date.DataStarter;
 import ua.com.alevel.name.UniqueName;
+import ua.com.alevel.town.controller.TownGraph;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -30,6 +31,7 @@ public class ModuleStart {
         switch (position) {
             case "1" -> DataStarter.run();
             case "2" -> UniqueName.run();
+            case "3" -> TownGraph.run();
             case "0" -> System.exit(0);
         }
     }
@@ -39,6 +41,7 @@ public class ModuleStart {
         System.out.println("Выберите номер задания.");
         System.out.println("1. Задание с датами");
         System.out.println("2. Задание с именами");
+        System.out.println("3. Задание с городами");
         System.out.println("0. Выход");
         System.out.println();
     }
