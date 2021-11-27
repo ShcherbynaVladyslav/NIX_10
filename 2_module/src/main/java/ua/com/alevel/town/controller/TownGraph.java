@@ -11,10 +11,10 @@ import java.util.List;
 
 public class TownGraph {
 
+    public static List<Cities> cities = new ArrayList<>();
     public static final String file = "2_module/src/main/resources/txt/input.txt";
 
     public static void run() throws FileNotFoundException {
-        List<Cities> cities = new ArrayList<>();
         int numOfCities = 0;
         BufferedReader reader = new BufferedReader(new FileReader(file));
         try {
@@ -40,7 +40,8 @@ public class TownGraph {
                 String[] nameOfTwoCities = nameWayModel(reader.readLine());
                 String firstTown = nameOfTwoCities[0];
                 String twoTown = nameOfTwoCities[1];
-                System.out.println(firstTown + " - " + twoTown);
+                System.out.println(firstTown);
+                System.out.println(findById(firstTown));
             }
             //расстановка соседей
         } catch (IOException e) {
@@ -51,6 +52,15 @@ public class TownGraph {
     private static void shortestWay(int idOne, int idTwo) {
         int result = 0;
         System.out.println(result);
+    }
+
+    public static Object findById(String nam) {
+        for (Cities cities : cities) {
+            if (cities.getName().equals(nam)) {
+                return cities;
+            }
+        }
+        return 0;
     }
 
 
