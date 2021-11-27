@@ -9,7 +9,7 @@ public class Cities {
     private String name;
     private int id;
     private int neighborsValue;
-    private Map<Integer, Integer> neighbor = new HashMap<>();
+    private final Map<Integer, Integer> neighbor = new HashMap<>();
     private List<Integer> neighborsId = new ArrayList<>();
 
 
@@ -46,6 +46,7 @@ public class Cities {
         neighbor.put(indexOfCity, price);
     }
 
+
     public List<Integer> getNeighborsId() {
         return neighborsId;
     }
@@ -53,6 +54,7 @@ public class Cities {
     public void setNeighborsId(List<Integer> neighborsId) {
         this.neighborsId = neighborsId;
     }
+
 
     @Override
     public String toString() {
@@ -64,4 +66,5 @@ public class Cities {
                 ", neighborsId=" + neighborsId +
                 '}';
     }
+
 }
