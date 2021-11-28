@@ -7,7 +7,6 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class TownGraph {
@@ -65,30 +64,22 @@ public class TownGraph {
             }
         }
         int[] allCost = new int[commonNeighbors.size()];
-        int needed;
         for (int i = 0; i < commonNeighbors.size(); i++) {
             allCost[i] = (WayCost(findById(commonNeighbors.get(i)).getId(), firstTown.getId()));
             System.out.println("Цена из города " + (findById(commonNeighbors.get(i)).getName()) + " в город " + (findById(firstTown.getId()).getName()) + " = " + allCost[i]);
-            System.out.println();
         }
-        int[] second = Arrays.copyOf(allCost, allCost.length);
         int min = allCost[0];
         int indexMin=0;
         for (int i = 0; i < allCost.length; i++) {
             if (allCost[i] < min) {
                 min = allCost[i];
                 indexMin = i;
-                System.out.println("index min = "+indexMin);
                 indexMin--;
             }
         }
-        Arrays.sort(allCost);
         int newCost = min;
-        System.out.println("index min = "+indexMin);
-        System.out.println("id " + commonNeighbors.get(indexMin));
         int nowCost = WayCost(findById(commonNeighbors.get(indexMin)).getId(), twoTown.getId());
-        System.out.println("общие соседи: ");
-        System.out.println(commonNeighbors);
+        System.out.println("общие соседи: "+ commonNeighbors);
         LastCost(nowCost, newCost);
     }
 
